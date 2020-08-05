@@ -17,6 +17,7 @@ const getMensagens = async (req, res) => {
     const messages = await (0, _typeorm.getRepository)(_Mensagem.Mensagem).find({
       relations: ['user']
     });
+    console.log(messages);
     return res.json(messages);
   } catch (error) {
     return res.status(404).json({
@@ -35,6 +36,7 @@ const addMensagem = async (req, res) => {
     grupoId,
     userName
   } = req.body;
+  console.log(req.body);
 
   try {
     await (0, _typeorm.getRepository)(_Mensagem.Mensagem).query(`
@@ -47,6 +49,7 @@ const addMensagem = async (req, res) => {
       },
       relations: ['mensagens']
     });
+    console.log(grupo);
     return res.json(grupo);
   } catch (error) {
     return res.status(404).json({

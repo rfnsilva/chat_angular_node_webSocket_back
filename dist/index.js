@@ -29,9 +29,10 @@ const io = require('socket.io')(server);
 io.origins('*:*');
 dotenv.config();
 (0, _typeorm.createConnection)();
+console.log('aqui 1');
 io.on('connection', socket => {
   socket.on('new-message', message => {
     socket.broadcast.emit('message-broadcast', message);
   });
 });
-server.listen(process.env.PORT || 3333);
+server.listen(process.env.PORT);

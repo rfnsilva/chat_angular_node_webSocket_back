@@ -11,6 +11,7 @@ export const getMensagens = async(req: Request, res: Response) => {
     const messages = await getRepository(Mensagem).find({
       relations: ['user']
     });
+    console.log(messages)
 
     return res.json(messages);
   } catch (error) {
@@ -23,6 +24,7 @@ export const getMensagens = async(req: Request, res: Response) => {
 export const addMensagem = async (req: Request, res: Response) => {
   const { mensagem, userId, grupoId, userName } = req.body;
 
+  console.log(req.body)
   try {
 
     await getRepository(Mensagem).query(`
@@ -36,6 +38,7 @@ export const addMensagem = async (req: Request, res: Response) => {
       },
       relations: ['mensagens']
     });
+    console.log(grupo)
 
     return res.json(grupo);
   } catch (error) {

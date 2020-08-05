@@ -18,6 +18,8 @@ io.origins('*:*');
 dotenv.config();
 createConnection();
 
+console.log('aqui 1')
+
 io.on('connection', (socket) => {
   socket.on('new-message', (message) => {
     socket.broadcast.emit('message-broadcast', message)
@@ -25,4 +27,4 @@ io.on('connection', (socket) => {
 
 });
 
-server.listen(process.env.PORT || 3333);
+server.listen(process.env.PORT);
