@@ -1,0 +1,19 @@
+{
+  "type": "postgres",
+  "url": "postgres://nsngmnuihvzxuo:f4c2514fb4eb2517ce2b266921bdf8dd0422b9476fa52df9ee642f21fd4e5b07@ec2-34-237-89-96.compute-1.amazonaws.com:5432/dee5kljvnq60ul",
+  "logging": true,
+  "entities": [
+     "dist/entity/**/*.js"
+  ],
+  "migrations": [
+     "dist/migration/**/*.js"
+  ],
+  "subscribers": [
+     "dist/subscriber/**/*.js"
+  ],
+  "cli": {
+     "entitiesDir": "src/entity",
+     "migrationsDir": "src/migration",
+     "subscribersDir": "src/subscriber"
+  }
+}
