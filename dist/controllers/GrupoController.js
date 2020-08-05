@@ -13,6 +13,7 @@ var _Grupo = require("../entity/Grupo");
 const getGrupos = async (req, res) => {
   try {
     const grupos = await (0, _typeorm.getRepository)(_Grupo.Grupo).find();
+    console.log(grupos);
     return res.json(grupos);
   } catch (error) {
     return res.status(404).json({

@@ -8,6 +8,7 @@ export const getGrupos = async(req: Request, res: Response) => {
   try {
 
     const grupos = await getRepository(Grupo).find();
+    console.log(grupos)
 
     return res.json(grupos);
   } catch (error) {
