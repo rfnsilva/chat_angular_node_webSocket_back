@@ -35,7 +35,7 @@ export class createTables1596606726826 implements MigrationInterface {
         );
 
         await queryRunner.query(
-            `CREATE TABLE "grupo_users_user" ("grupoId" uuid NOT NULL, "userId" uuid NOT NULL, CONSTRAINT "PK_3ef0759852caaefb9bac7cf913e" PRIMARY KEY ("grupoId", "userId"))`,
+            `CREATE TABLE "grupo_user_user" ("grupoId" uuid NOT NULL, "userId" uuid NOT NULL, CONSTRAINT "PK_3ef0759852caaefb9bac7cf913e" PRIMARY KEY ("grupoId", "userId"))`,
         );
 
         await queryRunner.query(
