@@ -15,7 +15,7 @@ export class createTables1596606726826 implements MigrationInterface {
 
         await queryRunner.query(
           `CREATE TABLE "mensagem" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(),
-          "autor" character varying(100) NOT NULL,,
+          "autor" character varying(100) NOT NULL,
           "mensagem" character varying(500) NOT NULL,
           "userId" uuid,
           CONSTRAINT "REL_0b343f6b8ca70f5ee3d9fqb956" UNIQUE ("userId"),
