@@ -30,9 +30,7 @@ io.origins('*:*');
 dotenv.config();
 (0, _typeorm.createConnection)();
 io.on('connection', socket => {
-  console.log('conectado');
   socket.on('new-message', message => {
-    console.log(message);
     socket.broadcast.emit('message-broadcast', message);
   });
 });
